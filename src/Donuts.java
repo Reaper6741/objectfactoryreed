@@ -15,9 +15,9 @@ public class Donuts {
         //dont say void
         //has to match exactly name of class
 
-    public Donuts(int pNumberOfDonuts){
-        frostingType = "boston creme";
-        hasfilling = true;
+    public Donuts(int pNumberOfDonuts, String pFrostingType, boolean pHasFilling){
+        frostingType = pFrostingType;
+        hasfilling = pHasFilling;
         numberOfDonuts = pNumberOfDonuts;
     }//end constructor
     //todo: make a method called printinfo
@@ -28,6 +28,14 @@ public class Donuts {
         System.out.println("its " + hasfilling + " that the donut has filling");
         System.out.println(numberOfDonuts + " donuts");
     }
+//todo: make a method called addDonut
 
+    public void addDonut(){
+        numberOfDonuts = numberOfDonuts + 1;
+    }
 
+//todo: give the method a parameter called newFrostingType
+    public void changeFrostingType(String newFrostingType){
+       frostingType = newFrostingType;
+    }
 }

@@ -13,6 +13,8 @@ public class Factory {
     //object -> is the house
     public int randomNumber;
 
+    public Pizza PizzaOrder1;
+
     public static void main(String[] args) {
         Factory a = new Factory();
     }
@@ -29,7 +31,7 @@ public class Factory {
 
         randomNumber = (int)(Math.random() * 100) + 1;
         //make an object of type donuts
-        donutOrder1 = new Donuts(randomNumber);
+        donutOrder1 = new Donuts(randomNumber, "glazzed", true);
         System.out.println(donutOrder1.numberOfDonuts + " donuts please");
         System.out.println("all " + donutOrder1.frostingType);
         System.out.println("it is " + donutOrder1.hasfilling + " that I want filling");
@@ -38,7 +40,7 @@ public class Factory {
 
         randomNumber = (int)(Math.random() * 45) + 1;
         //todo: make the 2nd order have a range of 1-45 using random
-        donutOrder2 = new Donuts(randomNumber);
+        donutOrder2 = new Donuts(randomNumber, "chocolate", false);
         //todo: sout the donutsOrder2 instance vars
         System.out.println(donutOrder2.numberOfDonuts + " donuts please");
         System.out.println("all " + donutOrder2.frostingType);
@@ -46,7 +48,16 @@ public class Factory {
         donutOrder2.numberOfDonuts = donutOrder1.numberOfDonuts * 2;
         System.out.println(donutOrder2.numberOfDonuts + " donuts please");
 
+        donutOrder2.addDonut();
+        donutOrder2.changeFrostingType("jelly");
         donutOrder2.printInfo();
+
+
+        PizzaOrder1 = new Pizza("Large", true,4);
+        //todo: sout the donutsOrder2 instance vars
+        System.out.println("large " + PizzaOrder1.size);
+        System.out.println("its " + PizzaOrder1.pepporoni + " pizza");
+        System.out.println(PizzaOrder1.quantity + " of 4");
 
     }
 
